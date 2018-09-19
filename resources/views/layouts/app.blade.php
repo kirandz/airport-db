@@ -141,7 +141,7 @@
             <div class="pull-right hidden-xs">
                 <b>Version</b> 1.0.0
             </div>
-            <strong>Copyright © 2018 <a href="#">Irfan Hafid</a></strong>
+            <strong>Copyright © 2018 <a href="https://github.com/kirandz/airport-db" target="_blank">Irfan Hafid</a></strong>
         </footer>
     </div>
     <!-- ./wrapper -->
