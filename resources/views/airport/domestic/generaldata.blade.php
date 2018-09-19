@@ -20,6 +20,13 @@
         .table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
             border: 1px solid #8aa4af;
         }
+        .fixed-button
+        {
+            position: fixed;
+            bottom: 10px;
+            right: 30px;
+            opacity: 0.8;
+        }
     </style>
 
     <section class="content">
@@ -279,6 +286,8 @@
         <input type="hidden" id="flag" value="1">
     @endif
 
+    <button class="btn btn-primary fixed-button" style="display: none"><i class="glyphicon glyphicon-chevron-up"></i></button>
+
     <script>
         var flag = $('#flag').val();
 
@@ -510,6 +519,20 @@
                         }
                     }
                 });
+            });
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('.fixed-button').fadeIn();
+                } else {
+                    $('.fixed-button').fadeOut();
+                }
+            });
+            $('.fixed-button').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 500);
+                return false;
             });
         });
 
