@@ -25,7 +25,7 @@
             position: fixed;
             bottom: 10px;
             right: 30px;
-            opacity: 0.7;
+            opacity: 0.8;
         }
     </style>
 
@@ -41,8 +41,6 @@
                         <li><a href="{{url('airport-dom/adl/'.$airport->id)}}">Airport Data Limitation (ADL)</a></li>
                     </ul>
                     <div class="tab-content">
-                        <button class="btn btn-default fixed-button"><i class="glyphicon glyphicon-arrow-up"></i></button>
-
                         <div class="tab-pane active" id="detaildata" style="display: none">
 
                             <!-- Airport Data -->
@@ -1555,6 +1553,8 @@
         <input type="hidden" id="flag" value="1">
     @endif
 
+    <button class="btn btn-primary fixed-button" style="display: none"><i class="glyphicon glyphicon-chevron-up"></i></button>
+
     <script>
         var flag = $('#flag').val();
 
@@ -2970,8 +2970,14 @@
                 });
             });
 
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 50) {
+                    $('.fixed-button').fadeIn();
+                } else {
+                    $('.fixed-button').fadeOut();
+                }
+            });
             $('.fixed-button').click(function () {
-                console.log('asd');
                 $('body,html').animate({
                     scrollTop: 0
                 }, 500);
